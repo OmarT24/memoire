@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<img  src="0.png" id="1" style="width:100px"onclick="turncard()">
+<img  src="0.png" id="2" style="width:100px"onclick="turncard()">
+<img  src="0.png" id="3" style="width:100px"onclick="turncard()">
+<img  src="0.png" id="4" style="width:100px"onclick="turncard()">
+
+
+<script>
+let nbreturned=0;
+let returnedid=0;
+let returned="";
+function turncard() 
+{
+    switch (event.target.id)
+    {
+        case "1":
+            document.getElementById(event.target.id).src='1.jpg';
+            break;
+
+        case "2":
+            document.getElementById(event.target.id).src='2.jpg';
+            break;
+
+        case "3":
+            document.getElementById(event.target.id).src='1.jpg';
+            break;
+
+        case "4":
+            document.getElementById(event.target.id).src='2.jpg';
+            break;
+    }
+    
+    if (nbreturned==0)
+    {
+        nbreturned++;
+        returned=document.getElementById(event.target.id).src;
+        returnedid=event.target.id;
+    } 
+    else
+    {
+        if (returned!=document.getElementById(event.target.id).src)
+        {
+            document.getElementById(event.target.id).src="0.png";
+            document.getElementById(returnedid).src="0.png";
+
+        }
+        nbreturned=0;
+        returned ="";
+        returnedid=0;
+    }
+}
+
+
+</script>
+
+
+</body>
+</html>
